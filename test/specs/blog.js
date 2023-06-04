@@ -1,8 +1,9 @@
+import BlogPage from '../pages/blog-page'
 describe('Check the blogs', () => {
     it('', async()=>{
-        browser.url('/blog');
+        await BlogPage.Open();
         //get the recentpost list  
-        const recentpostlist=await $('#recent-posts-3') .$$('ul li');
+        const recentpostlist=await BlogPage.recentPostList;
         //loop the length of the text is greater than 10  
         for(const item of recentpostlist){
             const text= await item.getText();
