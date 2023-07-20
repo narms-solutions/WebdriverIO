@@ -1,5 +1,6 @@
-//import contactPage from "../pages/contact-page";
+//import * as faker from '@faker-js/faker'
 import ContactPage from "../pages/contact-page";
+//import contactPage from '../pages/contact-page';
 describe('Fill the contact form', () => {
     it('Enter the  contact form and assert the successfull message ',async () => {
         //open Contact page
@@ -7,6 +8,7 @@ describe('Fill the contact form', () => {
 
         
         await ContactPage.SubmitForm('Narmada','narmada@gmail.com','0725493090','This is a sample text message');
+        
         //Here addValue -add text to the input fields
         //setValue -clears the value and add the value
 

@@ -24,11 +24,20 @@ exports.config = {
     //
     specs: [
         // ToDo: define location for spec files here
-         './test/specs/**/contact.js'
+         './test/specs/**/*.js'
     ],
+
+    suites:{
+        smoke:[
+            './test/specs/**/home.js',
+            './test/specs/**/contact.js'
+
+        ]
+    },
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+      
+    // 'path/to/excluded/files'
     ],
     //
     // ============
@@ -54,8 +63,13 @@ exports.config = {
     //
     capabilities: [{
         // capabilities for local browser web tests
+        maxInstances: 5,
         browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
-    }],
+    },
+    {
+        browserName:'firefox'
+    }
+],
     //
     // ===================
     // Test Configurations
@@ -103,7 +117,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
+    services: ['selenium-standalone'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -133,7 +147,7 @@ exports.config = {
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000
+        timeout: 150000
     },
     //
     // =====

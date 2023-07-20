@@ -1,4 +1,4 @@
-import NavComponent from "./component/Nav-comp";
+import NavComponent from "./component/nav-comp";
 
 class HomePage{
     open(){

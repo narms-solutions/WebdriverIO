@@ -16,7 +16,7 @@ describe('Learning wdio', ()=>{
         //open about page
         await browser.url('https://practice.automationbro.com/about');
         //Assert about page url  
-        await expect(browser).toHaveUrl('https://practice.automationbro.com/about/');
+        await expect(browser).toHaveUrl('https://practice.automationbro.com/about');
 
        });
 
@@ -33,8 +33,8 @@ describe('Learning wdio', ()=>{
 
        it('Click on logo and assert Url does not contain text get started',async()=>{
         //clcik on logo button  
-        //await $('#masthead > div > div > div.tg-block.tg-block--one > div > a').click(); 
-        await HomePage.imageLogo.click(); 
+        await $('#masthead > div > div > div.tg-block.tg-block--one > div > a').click(); 
+       // await HomePage.imageLogo.click(); 
         //Assert url doesnot caontains Get started text  
         await expect(browser).not.toHaveUrlContaining('get-started');
        });
